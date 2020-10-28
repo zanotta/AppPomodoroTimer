@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView, StyleSheet, Alert, View, Text, Button, TouchableOpacity} from 'react-native';
 import CountDown from 'react-native-countdown-component';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 class App extends React.Component {
   
@@ -29,7 +30,6 @@ class App extends React.Component {
 			<SafeAreaView style={styles.MainView}>
 
 				<View style={styles.timeArea}>
-					<Text style={styles.time}>{this.state.timeLeft}</Text>
 					<CountDown
 						until={this.state.timeLeft}
 						onFinish={() => Alert.alert('finished')}
@@ -46,14 +46,18 @@ class App extends React.Component {
 						style={styles.actionButton}
 						onPress={this.changeTimerStatus}
 					>
-						<Text style={{color: '#FFF'}}>INICIAR</Text>
+						<Text style={{color: '#FFF'}}>
+							<FontAwesome5 name={'play'} solid />
+						</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity
 						style={styles.actionButton}
 						onPress={this.changeTimerStatus}
 					>
-						<Text style={{color: '#FFF'}}>PARAR</Text>
+						<Text style={{color: '#FFF'}}>
+							<FontAwesome5 name={'pause'} solid />
+						</Text>
 					</TouchableOpacity>
 
 				</View>
